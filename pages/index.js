@@ -1,4 +1,11 @@
-import { Container, Typography, Paper, InputBase, IconButton, Grid } from '@material-ui/core'
+import {
+    Container, 
+    Typography, 
+    Paper, 
+    InputBase, 
+    IconButton, 
+    Grid 
+} from '@material-ui/core'
 
 import { makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/search'

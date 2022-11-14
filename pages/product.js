@@ -1,4 +1,15 @@
-import { Avatar, Box, Card, CardHeader, CardMedia, Chip, Container, Grid, Typography } from '@material-ui/core'
+import { 
+    Avatar, 
+    Box,
+    Card, 
+    CardHeader, 
+    CardMedia, 
+    Chip, 
+    Container, 
+    Grid, 
+    Typography 
+} from '@material-ui/core'
+
 import TemplateDefault from '../src/templates/Default'
 import { makeStyles } from '@material-ui/styles'
 
