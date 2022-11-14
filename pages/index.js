@@ -1,8 +1,10 @@
-import { Container, Typography, Paper, InputBase, IconButton, Grid, Card, CardMedia, CardContent,Button } from '@material-ui/core'
+import { Container, Typography, Paper, InputBase, IconButton, Grid } from '@material-ui/core'
 
 import { makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/search'
 import TemplateDefault from '../src/templates/Default'
+
+import Card from '../src/components/Card'
 
 const useStyles = makeStyles((theme) => ({
     searchBox: {
@@ -11,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(0, 2),
         marginTop: '20px'
     },
-    cardMedia:{
-        paddingTop: '56%',
+    cardGrid: {
+        marginTop: 20
     }
 }))
 
@@ -40,58 +42,28 @@ const Home = () => {
                 <Typography component='h2' variant='h4' align='center' color='textPrimary'>
                     Destaques
                 </Typography>
-                <br/>
+                <br />
                 <Grid container spacing={4}>
                     <Grid item xs={12} sm={6} md={4}>
-                        <Card>
-                            <CardMedia
-                                className={classes.cardMedia}
-                                image={'https://source.unsplash.com/random'}
-                                title="Título da imagem"
-                            />
-                            <CardContent>
-                                <Typography variant='h5' component='h2'>
-                                    Produto X
-                                </Typography>
-                                <Typography>
-                                    R$ 60,00
-                                </Typography>
-                            </CardContent>
-                        </Card>
+                        <Card
+                            image={'https://source.unsplash.com/random'}
+                            title='Produto X'
+                            subtitle='R$ 60,00'
+                        />
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <Card>
-                            <CardMedia
-                                className={classes.cardMedia}
-                                image={'https://source.unsplash.com/random'}
-                                title="Título da imagem"
-                            />
-                            <CardContent>
-                                <Typography variant='h5' component='h2'>
-                                    Produto X
-                                </Typography>
-                                <Typography>
-                                    R$ 60,00
-                                </Typography>
-                            </CardContent>
-                        </Card>
+                        <Card
+                            image={'https://source.unsplash.com/random'}
+                            title='Produto X'
+                            subtitle='R$ 60,00'
+                        />
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <Card>
-                            <CardMedia
-                                className={classes.cardMedia}
-                                image={'https://source.unsplash.com/random'}
-                                title="Título da imagem"
-                            />
-                            <CardContent>
-                                <Typography variant='h5' component='h2'>
-                                    Produto X
-                                </Typography>
-                                <Typography>
-                                    R$ 60,00
-                                </Typography>
-                            </CardContent>
-                        </Card>
+                        <Card
+                            image={'https://source.unsplash.com/random'}
+                            title='Produto X'
+                            subtitle='R$ 60,00'
+                        />
                     </Grid>
                 </Grid>
             </Container>

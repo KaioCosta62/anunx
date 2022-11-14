@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3)
   },
   boxContainer: {
-    paddingBottom: theme.spacing(3)
+    paddingBottom: theme.spacing(3),
+    marginTop: 20
   },
   thumbsContainer: {
     display: 'flex',
