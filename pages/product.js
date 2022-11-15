@@ -9,9 +9,10 @@ import {
     Grid, 
     Typography 
 } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
+import Carousel from 'react-material-ui-carousel'
 
 import TemplateDefault from '../src/templates/Default'
-import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles((theme) => ({
     box: {
@@ -25,6 +26,12 @@ const useStyles = makeStyles((theme) => ({
     price: {
         fontWeight: 'bold',
         marginBottom: 20
+    },
+    card: {
+        height: '100%'
+    },
+    cardMedia: {
+        paddingTop: '56%'
     }
 }))
 const Product = () => {
@@ -35,7 +42,30 @@ const Product = () => {
                 <Grid container spacing={3}>
                     <Grid item xs={8}>
                         <Box className={classes.box}>
-                            Carossel
+                            <Carousel
+                                autoPlay={false}
+                                animation='slide'
+                                navButtonsProps={{
+                                    style:{
+                                        color: 'white'
+                                    }
+                                }}
+                            >
+                                <Card className={classes.card}>
+                                    <CardMedia
+                                        className={classes.cardMedia}
+                                        image='https://source.unsplash.com/random?a=1'
+                                        title='Título da Imagem'
+                                    />
+                                </Card>
+                                <Card className={classes.card}>
+                                    <CardMedia
+                                        className={classes.cardMedia}
+                                        image='https://source.unsplash.com/random?a=2'
+                                        title='Título da Imagem'
+                                    />
+                                </Card>
+                            </Carousel>
                         </Box>
 
                         <Box className={classes.box} align='left'>
