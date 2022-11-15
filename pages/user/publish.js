@@ -83,9 +83,9 @@ const useStyles = makeStyles((theme) => ({
 
 const validationSchema = yup.object().shape({
   title: yup.string()
-  .min(6,'Escreva um título com no mínimo 6 caracteres')
-  .max(100, 'Título excede 100 caracteres')
-  .required('Campo obrigatório'),
+  .min(6,'Escreva um título com no mínimo 6 caracteres!')
+  .max(100, 'Título excede 100 caracteres!')
+  .required('Campo obrigatório!'),
 })
 
 const Publish = () => {
