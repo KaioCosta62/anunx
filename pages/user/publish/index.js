@@ -1,4 +1,4 @@
-import {Formik} from 'formik'
+import { Formik } from 'formik'
 
 import {
   Box,
@@ -15,8 +15,7 @@ import {
 } from '@material-ui/core'
 
 import FileUpload from '../../../src/components/FileUpload'
-import { useDropzone } from 'react-dropzone'
-import DeleteForever from '@material-ui/icons/DeleteForever'
+
 
 import TemplateDefault from '../../../src/templates/Default'
 import { initialValues, validationSchema } from './formValues'
@@ -47,7 +46,7 @@ const Publish = () => {
             setFieldValue
           }) => {
 
-          
+
             return (
               <form onSubmit={handleSubmit}>
                 <Container maxWidth="sm">
@@ -82,7 +81,7 @@ const Publish = () => {
                         value={values.category}
                         fullWidth
                         onChange={handleChange}
-                      >  
+                      >
                         <MenuItem value='Bebê e criança'>Bebê e criança</MenuItem>
                         <MenuItem value='Agricultura'>Agricultura</MenuItem>
                         <MenuItem value='Moda'>Moda</MenuItem>

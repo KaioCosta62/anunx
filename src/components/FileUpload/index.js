@@ -9,6 +9,7 @@ import {
 import DeleteForever from '@material-ui/icons/DeleteForever'
 
 import useStyles from './styles'
+
 const fileUpload = ({files, errors, touched, setFieldValue}) => {
     const classes = useStyles()
 
