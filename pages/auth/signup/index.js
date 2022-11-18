@@ -1,12 +1,33 @@
 import {Formik } from 'formik'
-import { Container, Typography, FormControl, InputLabel, Box, FormHelperText, Input, Button } from '@material-ui/core'
+import axios from 'axios'
+import {useRouter} from 'next/router'
+import { Container, Typography, FormControl, InputLabel, Box, FormHelperText, Input, Button, CircularProgress } from '@material-ui/core'
 
+import useToasty from '../../../src/contexts/Toasty'
 import useStyles from './styles'
 import { initialValues, validationSchema } from './formValues'
 import TemplateDefault from '../../../src/templates/Default'
 
 const Signup = () => {
     const classes = useStyles()
+    const router = useRouter()
+    const {setToasty} = useToasty()
+
+    const handleFormSubmit = async values => {
+        const response = await axios.post('/api/users', values)
+
+        console.log(response)
+
+        if(response.data.success){
+            setToasty({
+                open: true,
+                severity: 'success',
+                text: 'Cadastro realizado com sucesso!'
+            })
+
+            router.push('/auth/signin')
+        }
+    }
 
     return (
         <TemplateDefault>
@@ -24,9 +45,7 @@ const Signup = () => {
                     <Formik
                         initialValues={initialValues}
                         validationSchema= {validationSchema}
-                        onSubmit={(values) => {
-                            console.log('Ok, form enviado', values)
-                        }}
+                        onSubmit={handleFormSubmit}  
                     >
                         {
                             ({
@@ -34,7 +53,8 @@ const Signup = () => {
                                 values,
                                 errors,
                                 handleChange,
-                                handleSubmit
+                                handleSubmit,
+                                isSubmitting
                             }) => {
 
                                 return (
@@ -90,10 +110,18 @@ const Signup = () => {
                                             </FormHelperText>
                                         </FormControl>
 
-                                        <Button type='submit' variant='contained' color='primary' fullWidth className = {classes.submit}>
-                                            Publicar anúncio
-                                        </Button>
-
+                                        {
+                                            isSubmitting
+                                                ? (
+                                                    <CircularProgress className={classes.loading}/>
+                                                )
+                                                :
+                                                (
+                                                    <Button type='submit' variant='contained' color='primary' fullWidth className = {classes.submit}>
+                                                    Cadastrar
+                                                    </Button>
+                                                )
+                                        }                              
                                         <Typography component='h6' variant='body2'>
                                             Já tem uma conta? Entre aqui
                                         </Typography>

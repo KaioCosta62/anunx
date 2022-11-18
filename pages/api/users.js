@@ -1,6 +1,7 @@
  import dbConnect from '../../src/utils/dbConnect'
  import { crypto } from '../../src/utils/password'
  import UsersModel from '../../src/models/users'
+ 
  const users = async (req, res) => {
     const {method} = req
 
