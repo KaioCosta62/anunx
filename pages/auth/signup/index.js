@@ -36,6 +36,7 @@ const Signup = () => {
                                 handleChange,
                                 handleSubmit
                             }) => {
+
                                 return (
                                     <form onSubmit={handleSubmit}>
                                         <FormControl fullWidth error={errors.name && touched.name} className={classes.formControl}>
@@ -93,7 +94,7 @@ const Signup = () => {
                                             Publicar anúncio
                                         </Button>
 
-                                        <Typography component='h6' variant='h6'>
+                                        <Typography component='h6' variant='body2'>
                                             Já tem uma conta? Entre aqui
                                         </Typography>
                                     </form>
