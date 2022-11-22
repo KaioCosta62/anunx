@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     loading: {
         display: 'block',
         margin: '20px auto'
+    },
+    errorMessage: {
+        margin:  '20px 0'
     }
 }))
 
