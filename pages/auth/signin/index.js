@@ -40,7 +40,7 @@ const Signin = ({APP_URL}) => {
         signIn('credentials', {
             email: values.email,
             password: values.password,
-            callbackUrl: 'http://localhost:3000/user/dashboard'
+            callbackUrl: `${APP_URL}/user/dashboard`
         })
     }
     return (
