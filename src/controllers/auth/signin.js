@@ -17,7 +17,9 @@ const post = async (req, res) => {
         return res.status(401).json({success: false, message: 'invalid'})
     }
 
-    const passwordIsCorrect = compare(password, user.password)
+    const passwordIsCorrect = await compare(password, user.password)
+
+    console.log(passwordIsCorrect)
 
     if(passwordIsCorrect){
         return res.status(200).json({

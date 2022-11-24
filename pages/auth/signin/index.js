@@ -20,19 +20,19 @@ import useToasty from '../../../src/contexts/Toasty'
 import useStyles from './styles'
 import { initialValues, validationSchema } from './formValues'
 import TemplateDefault from '../../../src/templates/Default'
-import { Alert } from '@material-ui/lab'
+import  Alert  from '@material-ui/lab/Alert'
 
-const Signin = ({APP_URL}) => {
+const Signin = () => {
     const classes = useStyles()
     const router = useRouter()
     const {setToasty} = useToasty()
     const [session] = useSession()
 
-    console.log(session)
 
+    console.log(session)
     const handleGoogleLogin = () => {
         signIn('google', {
-            callbackUrl: `${APP_URL}/user/dashboard`
+            callbackUrl: `http://localhost:3000/user/dashboard`
         })
     }
 
@@ -40,7 +40,7 @@ const Signin = ({APP_URL}) => {
         signIn('credentials', {
             email: values.email,
             password: values.password,
-            callbackUrl: `${APP_URL}/user/dashboard`
+            callbackUrl: `http://localhost:3000/user/dashboard`
         })
     }
     return (
@@ -91,15 +91,7 @@ const Signin = ({APP_URL}) => {
 
                                 return (
                                     <form onSubmit={handleSubmit}>
-                                        {
-                                            router.query.i === '1'
-                                            ? (
-                                                <Alert severity='error' className={classes.errorMessage}>
-                                                    Usuário ou senha inválidos
-                                                </Alert>
-                                            )
-                                            : null
-                                        }
+                                        {router.query.i==='1' ? <Alert severity='error' className={classes.errorMessage}>Usuário ou senha inválidos</Alert> : null }
                                         <FormControl fullWidth error={errors.email && touched.email} className={classes.formControl}>
                                             <InputLabel className={classes.inputLabel}>E-mail</InputLabel>
                                             <Input
@@ -149,10 +141,6 @@ const Signin = ({APP_URL}) => {
     )
 }
 
-Signin.getInitialProps = async function(){
-    return {
-        APP_URL: process.env.APP_URL
-    }
-}
+
 
 export default Signin
