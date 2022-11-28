@@ -4,12 +4,12 @@ import dbConnect from '../../utils/dbConnect'
 import {compare} from '../../utils/password'
 
 const post = async (req, res) => {
+    await dbConnect()
+
     const{
         email,
         password
     } = req.body
-
-    await dbConnect()
 
     const user = await UsersModel.findOne({email})
 
@@ -23,7 +23,7 @@ const post = async (req, res) => {
 
     if(passwordIsCorrect){
         return res.status(200).json({
-            _id: user._id,
+            id: user._id,
             name: user.name,
             email: user.email
         })
