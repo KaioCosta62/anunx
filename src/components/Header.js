@@ -61,13 +61,20 @@ export default function ButtonAppBar() {
               ? (
                   <IconButton color='secondary' onClick={(e) => setAnchorUserMenu(e.currentTarget)}>
                     {  
-                        session.user.image
-                        ?  <Avatar src={session.user.image}/>
-                        :  <AccountCircle/>
+                        session
+                        ?(
+                          <IconButton color='secondary'>
+                            {
+                              session.user.image
+                              ? <Avatar src = {session.user.image}/>
+                              : <AccountCircle/>
+                            }
+                            <Typography variant='subtitle2' color='secondary' className={classes.userName}>
+                              {session.user.name}
+                            </Typography>
+                          </IconButton>
+                        ): null
                     }
-                    <Typography variant='subtitle2' color='secondary' className={classes.userName}>
-                      {session.user.name}
-                    </Typography>
                 </IconButton>
               ): null
               

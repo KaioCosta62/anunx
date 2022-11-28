@@ -22,9 +22,10 @@ import { initialValues, validationSchema } from './formValues'
 import TemplateDefault from '../../../src/templates/Default'
 import  Alert  from '@material-ui/lab/Alert'
 
-const Signin = () => {
+const Signin = ({APP_URL}) => {
     const classes = useStyles()
     const router = useRouter()
+    console.log(router)
     const {setToasty} = useToasty()
     const [session] = useSession()
 
@@ -32,7 +33,7 @@ const Signin = () => {
     console.log(session)
     const handleGoogleLogin = () => {
         signIn('google', {
-            callbackUrl: `http://localhost:3000/user/dashboard`
+            callbackUrl: `${APP_URL}/user/dashboard`
         })
     }
 
@@ -40,7 +41,7 @@ const Signin = () => {
         signIn('credentials', {
             email: values.email,
             password: values.password,
-            callbackUrl: `http://localhost:3000/user/dashboard`
+            callbackUrl: `${APP_URL}/user/dashboard`
         })
     }
     return (
@@ -91,7 +92,15 @@ const Signin = () => {
 
                                 return (
                                     <form onSubmit={handleSubmit}>
-                                        {router.query.i==='1' ? <Alert severity='error' className={classes.errorMessage}>Usuário ou senha inválidos</Alert> : null }
+                                        {
+                                             router.query.i === '1'
+                                             ? (
+                                               <Alert severity="error" className={classes.errorMessage}>
+                                                 Usuário ou senha inválidos
+                                               </Alert>
+                                             )
+                                             : null
+                                        }
                                         <FormControl fullWidth error={errors.email && touched.email} className={classes.formControl}>
                                             <InputLabel className={classes.inputLabel}>E-mail</InputLabel>
                                             <Input
@@ -142,5 +151,12 @@ const Signin = () => {
 }
 
 
-
+export async function getServerSideProps (){
+    return {
+        props: {
+            APP_URL: process.env.APP_URL
+        }
+    }
+}
+ 
 export default Signin

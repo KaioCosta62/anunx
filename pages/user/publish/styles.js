@@ -12,7 +12,11 @@ const useStyles = makeStyles((theme) => ({
     inputLabel: {
       fontWeight: 'bold',
       color: theme.palette.primary.main
-    }
+    },
+    loading: {
+      display: 'block',
+      margin: '20px auto'
+  }
 }))
 
 export default useStyles
