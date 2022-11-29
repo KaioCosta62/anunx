@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    cursor: 'pointer'
   },
   headButton: {
     marginRight: 10
@@ -33,24 +34,26 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     margin: '6px 0'
-  }
+  },
 }));
 
 export default function ButtonAppBar() {
   const classes = useStyles()
   const [anchorUserMenu, setAnchorUserMenu] = useState(false)
   const [session] = useSession()
-
+  console.log(`Session: ${session}`)
   const openUserMenu = Boolean(anchorUserMenu)
 
   return (
     <>
       <AppBar position="static" elevation={3}>
         <Container maxWidth='lg'>
-          <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              Anunx
-            </Typography>
+          <Toolbar> 
+            <Link href='/' passHref>
+              <Typography variant="h6" className={classes.title}>
+                  Anunx
+              </Typography>   
+              </Link>
             <Link href={session ? '/user/publish' : '/auth/signin'} passHref>
               <Button color="inherit" variant='outlined' className={classes.headButton}>
                 Anunciar e vender
@@ -60,21 +63,21 @@ export default function ButtonAppBar() {
               session
               ? (
                   <IconButton color='secondary' onClick={(e) => setAnchorUserMenu(e.currentTarget)}>
-                    {  
-                        session
-                        ?(
-                          <IconButton color='secondary'>
+                    {
+                      session
+                        ? (
+                          <IconButton color="secondary" onClick={(e) => setAnchorUserMenu(e.currentTarget)}>
                             {
                               session.user.image
-                              ? <Avatar src = {session.user.image}/>
-                              : <AccountCircle/>
+                                ? <Avatar src={session.user.image} />
+                                : <AccountCircle />
                             }
-                            <Typography variant='subtitle2' color='secondary' className={classes.userName}>
+                            <Typography variant="subtitle2" color="secondary" className={classes.userName}>
                               {session.user.name}
                             </Typography>
                           </IconButton>
-                        ): null
-                    }
+                        ) : null
+                     }
                 </IconButton>
               ): null
               
