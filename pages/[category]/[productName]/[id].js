@@ -113,7 +113,7 @@ const Product = ({product}) => {
                         </Card>
 
                         <Box className={classes.box}>
-                            <Typography component='h6' variant='h6' >Localização</Typography>       
+                            <Typography component='h6' variant='h6' >{product.user.location}</Typography>       
                         </Box>
                     </Grid>
 
