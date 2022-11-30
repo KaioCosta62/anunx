@@ -5,30 +5,22 @@ import {useRouter} from 'next/router'
 
 import {
     Container, 
-    Typography, 
-    Paper, 
-    InputBase, 
-    IconButton, 
+    Typography,  
     Grid 
 } from '@material-ui/core'
 
 import { makeStyles } from '@material-ui/core/styles'
-import SearchIcon from '@material-ui/icons/search'
+
 import TemplateDefault from '../src/templates/Default'
 
 import Card from '../src/components/Card'
 import dbConnect from '../src/utils/dbConnect'
 import ProductsModel from '../src/models/products'
 import { formatCurrency } from '../src/utils/currency'
+import SearchProducts from '../src/components/SearchProducts'
 
 
 const useStyles = makeStyles((theme) => ({
-    searchBox: {
-        display: 'flex',
-        justifyContent: 'center',
-        padding: theme.spacing(0, 2),
-        marginTop: '20px'
-    },
     cardGrid: {
         marginTop: 20
     },
@@ -53,16 +45,10 @@ const Home = ({products}) => {
                 <Typography component='h1' variant='h3' align='center' color='textPrimary'>
                     O que deseja encontrar?
                 </Typography>
-                <Paper className={classes.searchBox}>
-                    <InputBase
-                        onChange={(e) => setSearch(e.target.value)}
-                        placeholder='Ex.: Iphone 12 com garantia'
-                        fullWidth
-                    />
-                    <IconButton onClick={handleSubmitSearch}>
-                        <SearchIcon />
-                    </IconButton>
-                </Paper>
+                <SearchProducts
+                    handleSubmitSearch={handleSubmitSearch}
+                    setSearch = {setSearch}
+                />
             </Container>
 
             <Container maxWidth='lg' className={classes.cardGrid}>

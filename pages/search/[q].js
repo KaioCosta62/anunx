@@ -1,22 +1,21 @@
+import {useState} from 'react'
 import slugify from 'slugify'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 import {
     Container,
     Typography,
     Box,
     Grid,
-    IconButton,
-    Paper,
-    InputBase
 }from '@material-ui/core'
 
-import SearchIcon from '@material-ui/icons/search'
 import { makeStyles } from '@material-ui/core/styles'
 
 import Card from '../../src/components/Card'
 import TemplateDefault from '../../src/templates/Default'
 import { formatCurrency } from '../../src/utils/currency'
 import ProductsModel from '../../src/models/products'
+import SearchProducts from '../../src/components/SearchProducts'
 
 const useStyles = makeStyles((theme) => ({
     box: {
@@ -37,20 +36,23 @@ const useStyles = makeStyles((theme) => ({
 
 const List = ({products, query}) => {
     const classes = useStyles()
+    const [search, setSearch] = useState()
+    const router = useRouter()
+    const handleSubmitSearch = () => {
+        router.push({
+            pathname: `/search/${search}`
+        })
+    }
+
     return(
         <TemplateDefault>
             <Container maxWidth='lg'>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm = {12} md={12}>
-                        <Paper component='form' className={classes.searchBox}>
-                            <InputBase
-                                placeholder='Ex.: Iphone Xs Max com Garantia'
-                                fullWidth
-                            />
-                            <IconButton type='submit' aria-label='search'>
-                                <SearchIcon/>
-                            </IconButton>
-                        </Paper>
+                        <SearchProducts
+                            handleSubmitSearch={handleSubmitSearch}
+                            setSearch={setSearch}
+                        />
                     </Grid>
                 </Grid>
 
