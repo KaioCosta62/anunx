@@ -10,7 +10,7 @@ import DeleteForever from '@material-ui/icons/DeleteForever'
 
 import useStyles from './styles'
 
-const fileUpload = ({files, errors, touched, setFieldValue}) => {
+const FileUpload = ({files, errors, touched, setFieldValue}) => {
     const classes = useStyles()
 
     const { getRootProps, getInputProps } = useDropzone({
@@ -86,4 +86,4 @@ const fileUpload = ({files, errors, touched, setFieldValue}) => {
     )
 }
 
-export default fileUpload
+export default FileUpload
