@@ -40,6 +40,7 @@ const Publish = ({ userId, image }) => {
   formValues.userId = userId
   formValues.image = image
 
+  console.log(formValues)
 
   const handleSuccess = () => {
     setToasty({
@@ -246,6 +247,18 @@ const Publish = ({ userId, image }) => {
                       />
                       <FormHelperText>
                         { errors.phone && touched.phone ? errors.phone : null  }
+                      </FormHelperText>
+                    </FormControl>
+
+                    <FormControl error={errors.location && touched.location} fullWidth>
+                      <InputLabel className={classes.inputLabel}>Localização</InputLabel>
+                      <Input
+                        name="location"
+                        value={values.location}
+                        onChange={handleChange}
+                      />
+                      <FormHelperText>
+                        { errors.location && touched.location ? errors.location : null  }
                       </FormHelperText>
                     </FormControl>
                   </Box>
