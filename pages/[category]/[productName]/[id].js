@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 const Product = ({product}) => {
     const classes = useStyles()
+    const temp = product.user.timeStamp.split(' ')
     return (
         <TemplateDefault>
             <Container maxWidth='lg'>
@@ -71,7 +72,9 @@ const Product = ({product}) => {
 
                         <Box className={classes.box} align='left'>
                             <Typography component='span' variant='caption' >
-                                Publicado 16 de Junho de 2021
+                                {
+                                    `Anúncio publicado em: ${temp[2]} ${temp[1]} ${temp[3]} ${temp[4]}`
+                                }
                             </Typography>
 
                             <Typography component='h4' variant='h4' className={classes.productName}>

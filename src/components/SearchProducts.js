@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         padding: theme.spacing(0, 2),
         marginTop: '20px'
-    }
+    },
 }))
 
 const SearchProducts = ({handleSubmitSearch, setSearch}) => {

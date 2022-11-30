@@ -60,7 +60,8 @@ const post = async (req, res) => {
         phone,
         userId,
         image,
-        location
+        location,
+        timeStamp
       } = fields
 
       console.log(`Fields: ${fields}`)
@@ -76,7 +77,8 @@ const post = async (req, res) => {
           email,
           phone,
           image,
-          location
+          location,
+          timeStamp
         },
         files: filesToSave,  
       })

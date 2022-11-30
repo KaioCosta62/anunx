@@ -37,8 +37,12 @@ const Publish = ({ userId, image }) => {
     ...initialValues,
   }
 
+  const timeStamp = new Date().getTime()
+  const date = new Date(timeStamp)
+
   formValues.userId = userId
   formValues.image = image
+  formValues.timeStamp = date
 
   console.log(formValues)
 
@@ -100,6 +104,8 @@ const Publish = ({ userId, image }) => {
               <form onSubmit={handleSubmit}>
                 <Input type="hidden" name="userId" value={values.userId} />
                 <Input type="hidden" name="image" value={values.image} />
+                <Input type="hidden" name="timeStamp" value={values.timeStamp} />
+
 
                 <Container maxWidth="sm">
                   <Typography component="h1" variant="h2" align="center" color="textPrimary">

@@ -1,12 +1,12 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import slugify from 'slugify'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 import {
-    Container, 
-    Typography,  
-    Grid 
+    Container,
+    Typography,
+    Grid,
 } from '@material-ui/core'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const Home = ({products}) => {
+const Home = ({ products }) => {
     const router = useRouter()
     const [search, setSearch] = useState()
     const classes = useStyles()
@@ -47,7 +47,7 @@ const Home = ({products}) => {
                 </Typography>
                 <SearchProducts
                     handleSubmitSearch={handleSubmitSearch}
-                    setSearch = {setSearch}
+                    setSearch={setSearch}
                 />
             </Container>
 
@@ -61,8 +61,8 @@ const Home = ({products}) => {
                         products.map((product) => {
                             const category = slugify(product.category).toLowerCase()
                             const title = slugify(product.title).toLowerCase()
-                            return(
-                                <Grid key = {product._id} item xs={12} sm={6} md={4}>
+                            return (
+                                <Grid key={product._id} item xs={12} sm={6} md={4}>
                                     <Link href={`/${category}/${title}/${product._id}`} passHref>
                                         <a className={classes.productLink}>
                                             <Card
@@ -70,7 +70,7 @@ const Home = ({products}) => {
                                                 title={product.title}
                                                 subtitle={formatCurrency(product.price)}
                                             />
-                                        </a> 
+                                        </a>
                                     </Link>
                                 </Grid>
                             )
@@ -85,7 +85,7 @@ const Home = ({products}) => {
 export async function getServerSideProps() {
     await dbConnect()
     const products = await ProductsModel.aggregate([{
-        $sample: {size: 6}
+        $sample: { size: 6 }
     }])
 
     return {
