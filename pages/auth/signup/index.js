@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import {Formik } from 'formik'
 import axios from 'axios'
 import {useRouter} from 'next/router'
@@ -133,7 +134,7 @@ const Signup = () => {
                                                 )
                                         }                              
                                         <Typography component='h6' variant='body2'>
-                                            Já tem uma conta? Entre aqui
+                                            Já tem uma conta? Entre <Link href='/auth/signin'>aqui</Link>
                                         </Typography>
                                     </form>
                                 )
