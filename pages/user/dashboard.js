@@ -28,10 +28,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '30px auto 50px auto',
     display: 'inline-block'
   },
-
-  centerContainer: {
-    textAlign: 'center'
-  }
 }))
 
 const Home = ({products}) => {

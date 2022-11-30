@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import {Formik } from 'formik'
 import axios from 'axios'
@@ -133,10 +134,16 @@ const Signin = ({APP_URL}) => {
                                                     <CircularProgress className={classes.loading}/>
                                                 )
                                                 :
-                                                (
-                                                    <Button type='submit' variant='contained' color='primary' fullWidth className = {classes.submit}>
-                                                    Entrar
-                                                    </Button>
+                                                (   
+                                                    <>
+                                                        <Button type='submit' variant='contained' color='primary' fullWidth className = {classes.submit}>
+                                                        Entrar
+                                                        </Button>
+                                                        <Typography component='span' variant='body2'>
+                                                            Não tem uma conta? Clique <Link href='/auth/signup'>aqui</Link> e cadastre-se
+                                                        </Typography>
+                                                    </>
+                                                    
                                                 )
                                         }                              
                                     </form>
