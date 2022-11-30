@@ -84,7 +84,7 @@ const Publish = ({ userId, image }) => {
 
   return (
     <TemplateDefault>
-        <Formik
+      <Formik
         initialValues={formValues}
         validationSchema={validationSchema}
         onSubmit={handleFormSubmit}
@@ -116,33 +116,33 @@ const Publish = ({ userId, image }) => {
                   </Typography>
                 </Container>
 
-                <br/><br/>
+                <br /><br />
 
                 <Container maxWidth="md" className={classes.boxContainer}>
                   <Box className={classes.box}>
-                    
+
                     <FormControl error={errors.title && touched.title} fullWidth>
                       <InputLabel className={classes.inputLabel}>Título do Anúncio</InputLabel>
                       <Input
                         name="title"
                         value={values.title}
                         onChange={handleChange}
-                        label="ex.: Bicicleta Aro 18 com garantia"                        
+                        label="ex.: Bicicleta Aro 18 com garantia"
                       />
                       <FormHelperText>
-                        { errors.title && touched.title ? errors.title : null  }
+                        {errors.title && touched.title ? errors.title : null}
                       </FormHelperText>
                     </FormControl>
                     <br /><br />
-                    
+
                     <FormControl error={errors.category && touched.category} fullWidth>
                       <InputLabel className={classes.inputLabel}>Categoria</InputLabel>
                       <Select
                         name="category"
                         value={values.category}
                         fullWidth
-                        onChange={handleChange}                      
-                      >                        
+                        onChange={handleChange}
+                      >
                         <MenuItem value="Bebê e Criança">Bebê e Criança</MenuItem>
                         <MenuItem value="Agricultura">Agricultura</MenuItem>
                         <MenuItem value="Moda">Moda</MenuItem>
@@ -160,12 +160,12 @@ const Publish = ({ userId, image }) => {
                         <MenuItem value="Outros">Outros</MenuItem>
                       </Select>
                       <FormHelperText>
-                      { errors.category && touched.category ? errors.category : null  }
+                        {errors.category && touched.category ? errors.category : null}
                       </FormHelperText>
                     </FormControl>
                   </Box>
                 </Container>
-              
+
                 <Container maxWidth="md" className={classes.boxContainer}>
                   <Box className={classes.box}>
                     <FileUpload
@@ -189,7 +189,7 @@ const Publish = ({ userId, image }) => {
                         onChange={handleChange}
                       />
                       <FormHelperText>
-                        { errors.description && touched.description ? errors.description : null  }
+                        {errors.description && touched.description ? errors.description : null}
                       </FormHelperText>
                     </FormControl>
                   </Box>
@@ -206,9 +206,9 @@ const Publish = ({ userId, image }) => {
                         startAdornment={<InputAdornment position="start">R$</InputAdornment>}
                       />
                       <FormHelperText>
-                        { errors.price && touched.price ? errors.price : null  }
+                        {errors.price && touched.price ? errors.price : null}
                       </FormHelperText>
-                    </FormControl>                    
+                    </FormControl>
                   </Box>
                 </Container>
 
@@ -226,7 +226,7 @@ const Publish = ({ userId, image }) => {
                         onChange={handleChange}
                       />
                       <FormHelperText>
-                        { errors.name && touched.name ? errors.name : null  }
+                        {errors.name && touched.name ? errors.name : null}
                       </FormHelperText>
                     </FormControl>
                     <br /><br />
@@ -239,7 +239,7 @@ const Publish = ({ userId, image }) => {
                         onChange={handleChange}
                       />
                       <FormHelperText>
-                        { errors.email && touched.email ? errors.email : null  }
+                        {errors.email && touched.email ? errors.email : null}
                       </FormHelperText>
                     </FormControl>
                     <br /><br />
@@ -252,7 +252,7 @@ const Publish = ({ userId, image }) => {
                         onChange={handleChange}
                       />
                       <FormHelperText>
-                        { errors.phone && touched.phone ? errors.phone : null  }
+                        {errors.phone && touched.phone ? errors.phone : null}
                       </FormHelperText>
                     </FormControl>
 
@@ -264,16 +264,16 @@ const Publish = ({ userId, image }) => {
                         onChange={handleChange}
                       />
                       <FormHelperText>
-                        { errors.location && touched.location ? errors.location : null  }
+                        {errors.location && touched.location ? errors.location : null}
                       </FormHelperText>
                     </FormControl>
                   </Box>
                 </Container>
 
                 <Container maxWidth="md" className={classes.boxContainer}>
-                  <Box textAlign="right">
+                <Box textAlign="right">
                   {
-                    isSubmitting 
+                    isSubmitting === true
                       ? <CircularProgress />
                       : <Button type="submit" variant="contained" color="primary">Publicar anúncio</Button>
                   }
