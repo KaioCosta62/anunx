@@ -4,9 +4,9 @@ import Head from 'next/head';
 import { Provider } from 'next-auth/client';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import {ToastyProvider}  from '../src/contexts/Toasty';
-import CheckAuth from '../src/components/CheckAuth';
-import theme from '../src/theme';
+import {ToastyProvider} from '../src/contexts/Toasty'
+import CheckAuth from '../src/components/CheckAuth'
+import theme from '../src/theme'
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;

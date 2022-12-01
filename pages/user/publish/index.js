@@ -44,7 +44,6 @@ const Publish = ({ userId, image }) => {
   formValues.image = image
   formValues.timeStamp = date
 
-  console.log(formValues)
 
   const handleSuccess = () => {
     setToasty({

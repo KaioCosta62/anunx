@@ -22,6 +22,7 @@ import Card from '../../src/components/Card'
 import {formatCurrency} from '../../src/utils/currency'
 import useToasty from '../../src/contexts/Toasty';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 const useStyles = makeStyles((theme) => ({
   buttonAdd: {
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = ({products}) => {
   const classes = useStyles()
+  const route = useRouter()
   const {setToasty} = useToasty()
   const [productId, setProductId] = useState()
   const [removedProducts, setRemovedProducts] = useState([])
@@ -126,7 +128,7 @@ const Home = ({products}) => {
                   subtitle={formatCurrency(product.price)}
                   actions={
                     <>
-                      <Button size="small" color="primary">
+                      <Button size="small" color="primary" onClick={() => route.push(`/user/edit/${product._id}`)}>
                         Editar
                       </Button>
                       <Button size="small" color="primary" onClick={() => handleClickRemove(product._id)}>

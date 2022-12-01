@@ -103,7 +103,6 @@ const List = ({products, query}) => {
 
 export async function getServerSideProps({query}){
     const {q} = query
-    console.log(q)
     const products = await ProductsModel.find({
         $or: [
           {

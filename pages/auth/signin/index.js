@@ -26,12 +26,9 @@ import  Alert  from '@material-ui/lab/Alert'
 const Signin = ({APP_URL}) => {
     const classes = useStyles()
     const router = useRouter()
-    console.log(router)
     const {setToasty} = useToasty()
     const [session] = useSession()
 
-
-    console.log(session)
     const handleGoogleLogin = () => {
         signIn('google', {
             callbackUrl: `${APP_URL}/user/dashboard`
