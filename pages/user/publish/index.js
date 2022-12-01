@@ -21,9 +21,9 @@ import FileUpload from '../../../src/components/FileUpload'
 
 import TemplateDefault from '../../../src/templates/Default'
 import useToasty from '../../../src/contexts/Toasty'
-import { initialValues, validationSchema } from './formValues'
+import { initialValues, validationSchema } from '../../../src/components/PublishComponents/formValues'
 
-import useStyles from './styles'
+import useStyles from '../../../src/components/PublishComponents/styles'
 import { getSession } from 'next-auth/client'
 
 

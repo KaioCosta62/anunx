@@ -18,8 +18,8 @@ import {
 } from '@material-ui/core'
 
 import useToasty from '../../../src/contexts/Toasty'
-import useStyles from './styles'
-import { initialValues, validationSchema } from './formValues'
+import useStyles from '../../../src/components/SignInComponents/styles'
+import { initialValues, validationSchema } from '../../../src/components/SignInComponents/formValues'
 import TemplateDefault from '../../../src/templates/Default'
 import  Alert  from '@material-ui/lab/Alert'
 

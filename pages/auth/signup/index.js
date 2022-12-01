@@ -15,8 +15,8 @@ import {
 } from '@material-ui/core'
 
 import useToasty from '../../../src/contexts/Toasty'
-import useStyles from './styles'
-import { initialValues, validationSchema } from './formValues'
+import useStyles from '../../../src/components/SignUpComponents/styles'
+import { initialValues, validationSchema } from '../../../src/components/SignUpComponents/formValues'
 import TemplateDefault from '../../../src/templates/Default'
 
 const Signup = () => {
