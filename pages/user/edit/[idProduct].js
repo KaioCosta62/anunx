@@ -49,11 +49,13 @@ const Edit = ({userId, product, image}) => {
         ...initialValues,
     }
 
-    console.log(formValues)
-
+    const timeStamp = new Date().getTime()
+    const date = new Date(timeStamp)
+  
     formValues.userId = userId
     formValues.image = image
-
+    formValues.timeStamp = date
+    
     const handleSuccess = () => {
         setToasty({
           open: true,
@@ -273,7 +275,7 @@ const Edit = ({userId, product, image}) => {
                       {
                         isSubmitting === true
                           ? <CircularProgress />
-                          : <Button type="submit" variant="contained" color="primary">Publicar anúncio</Button>
+                          : <Button type="submit" variant="contained" color="primary">Editar anúncio</Button>
                       }
                       </Box>
                     </Container>

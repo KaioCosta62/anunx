@@ -1,32 +1,32 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import {Formik } from 'formik'
+import { Formik } from 'formik'
 import axios from 'axios'
-import {useRouter} from 'next/router'
-import {signIn, useSession} from 'next-auth/client'
+import { useRouter } from 'next/router'
+import { signIn, useSession } from 'next-auth/client'
 
-import { 
-     Container,
-     Typography,
-     FormControl,
-     InputLabel,
-     Box,
-     FormHelperText,
-     Input,
-     Button,
-     CircularProgress 
+import {
+    Container,
+    Typography,
+    FormControl,
+    InputLabel,
+    Box,
+    FormHelperText,
+    Input,
+    Button,
+    CircularProgress
 } from '@material-ui/core'
 
 import useToasty from '../../../src/contexts/Toasty'
 import useStyles from '../../../src/components/SignInComponents/styles'
 import { initialValues, validationSchema } from '../../../src/components/SignInComponents/formValues'
 import TemplateDefault from '../../../src/templates/Default'
-import  Alert  from '@material-ui/lab/Alert'
+import Alert from '@material-ui/lab/Alert'
 
-const Signin = ({APP_URL}) => {
+const Signin = ({ APP_URL }) => {
     const classes = useStyles()
     const router = useRouter()
-    const {setToasty} = useToasty()
+    const { setToasty } = useToasty()
     const [session] = useSession()
 
     const handleGoogleLogin = () => {
@@ -54,18 +54,18 @@ const Signin = ({APP_URL}) => {
                 <Box className={classes.box}>
 
                     <Box display='flex' justifyContent='center'>
-                        <Button 
-                        variant='contained'
-                        color='primary'
-                        startIcon={
-                            <Image
-                                src='/images/logo.webp'
-                                width={20}
-                                height={20}
-                                alt='Login com Google'
-                            />
-                        }
-                        onClick={handleGoogleLogin}
+                        <Button
+                            variant='contained'
+                            color='primary'
+                            startIcon={
+                                <Image
+                                    src='/images/logo.webp'
+                                    width={20}
+                                    height={20}
+                                    alt='Login com Google'
+                                />
+                            }
+                            onClick={handleGoogleLogin}
                         >Entrar com Google
                         </Button>
                     </Box>
@@ -75,8 +75,8 @@ const Signin = ({APP_URL}) => {
                     </Box>
                     <Formik
                         initialValues={initialValues}
-                        validationSchema= {validationSchema}
-                        onSubmit={handleFormSubmit}  
+                        validationSchema={validationSchema}
+                        onSubmit={handleFormSubmit}
                     >
                         {
                             ({
@@ -91,13 +91,13 @@ const Signin = ({APP_URL}) => {
                                 return (
                                     <form onSubmit={handleSubmit}>
                                         {
-                                             router.query.i === '1'
-                                             ? (
-                                               <Alert severity="error" className={classes.errorMessage}>
-                                                 Usuário ou senha inválidos
-                                               </Alert>
-                                             )
-                                             : null
+                                            router.query.i === '1'
+                                                ? (
+                                                    <Alert severity="error" className={classes.errorMessage}>
+                                                        Usuário ou senha inválidos
+                                                    </Alert>
+                                                )
+                                                : null
                                         }
                                         <FormControl fullWidth error={errors.email && touched.email} className={classes.formControl}>
                                             <InputLabel className={classes.inputLabel}>E-mail</InputLabel>
@@ -126,23 +126,10 @@ const Signin = ({APP_URL}) => {
                                         </FormControl>
 
                                         {
-                                            isSubmitting
-                                                ? (
-                                                    <CircularProgress className={classes.loading}/>
-                                                )
-                                                :
-                                                (   
-                                                    <>
-                                                        <Button type='submit' variant='contained' color='primary' fullWidth className = {classes.submit}>
-                                                        Entrar
-                                                        </Button>
-                                                        <Typography component='span' variant='body2'>
-                                                            Não tem uma conta? Clique <Link href='/auth/signup'>aqui</Link> e cadastre-se
-                                                        </Typography>
-                                                    </>
-                                                    
-                                                )
-                                        }                              
+                                            isSubmitting === true
+                                                ? <CircularProgress />
+                                                : <Button type="submit" variant="contained" color="primary">Entrar</Button>
+                                        }
                                     </form>
                                 )
                             }
@@ -155,12 +142,12 @@ const Signin = ({APP_URL}) => {
 }
 
 
-export async function getServerSideProps (){
+export async function getServerSideProps() {
     return {
         props: {
             APP_URL: process.env.APP_URL
         }
     }
 }
- 
+
 export default Signin

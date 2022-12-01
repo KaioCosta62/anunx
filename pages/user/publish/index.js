@@ -270,12 +270,12 @@ const Publish = ({ userId, image }) => {
                 </Container>
 
                 <Container maxWidth="md" className={classes.boxContainer}>
-                <Box textAlign="right">
-                  {
-                    isSubmitting === true
-                      ? <CircularProgress />
-                      : <Button type="submit" variant="contained" color="primary">Publicar anúncio</Button>
-                  }
+                  <Box textAlign="right">
+                    {
+                      isSubmitting === true
+                        ? <CircularProgress />
+                        : <Button type="submit" variant="contained" color="primary">Publicar Anúncio</Button>
+                    }
                   </Box>
                 </Container>
               </form>
