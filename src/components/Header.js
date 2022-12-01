@@ -51,7 +51,7 @@ export default function ButtonAppBar() {
           <Toolbar> 
             <Link href='/' passHref>
               <Typography variant="h6" className={classes.title}>
-                  Kaionunx
+                  Anunx
               </Typography>   
               </Link>
             <Link href={session ? '/user/publish' : '/auth/signin'} passHref>
