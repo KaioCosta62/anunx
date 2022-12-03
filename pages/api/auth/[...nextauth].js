@@ -11,20 +11,18 @@ export default NextAuth({
       }),
 
       Providers.Credentials({
-        name: "Credentials",
-        async authorize(credentials){
-            const res = await axios.post(`${process.env.APP_URL}/api/auth/signin`, credentials) 
-
-            const user = res.data
-
-             if(user){
-                  return user
-             } else{
-                  throw '/auth/signin?i=1'
-             }
-
-        
-          },
+        name: 'Credentials',
+         async authorize(credentials) {
+          const res = await axios.post(`${process.env.APP_URL}/api/auth/signin`, credentials)        
+          
+          const user = res.data        
+  
+          if (user) {
+            return user
+          } else {
+            throw '/auth/signin?i=1'
+          }
+        }
       })
     ],
     

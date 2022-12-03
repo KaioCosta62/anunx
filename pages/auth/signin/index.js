@@ -35,13 +35,15 @@ const Signin = ({ APP_URL }) => {
         })
     }
 
-    const handleFormSubmit = async (values) => {
+    const handleFormSubmit = (values) => {
         signIn('credentials', {
             email: values.email,
             password: values.password,
             callbackUrl: `${APP_URL}/user/dashboard`
-        })
+          })
     }
+
+    console.log(router)
     return (
         <TemplateDefault>
             <Container maxWidth='sm' component='main' className={classes.container}>
@@ -87,7 +89,6 @@ const Signin = ({ APP_URL }) => {
                                 handleSubmit,
                                 isSubmitting
                             }) => {
-
                                 return (
                                     <form onSubmit={handleSubmit}>
                                         {
@@ -126,10 +127,24 @@ const Signin = ({ APP_URL }) => {
                                         </FormControl>
 
                                         {
-                                            isSubmitting === true
-                                                ? <CircularProgress />
-                                                : <Button type="submit" variant="contained" color="primary">Entrar</Button>
+                                            isSubmitting
+                                                ? (
+                                                    <CircularProgress className={classes.loading} />
+                                                ) : (
+                                                    <Button
+                                                        type="submit"
+                                                        fullWidth
+                                                        variant="contained"
+                                                        color="primary"
+                                                        className={classes.submit}
+                                                    >
+                                                        Entrar
+                                                    </Button>
+                                                )
                                         }
+                                        <Typography component='h6' variant='body2' style={{ marginTop: 20 }}>
+                                            Não tem uma conta? Crie uma clicando <Link href='/auth/signup'>aqui</Link>
+                                        </Typography>
                                     </form>
                                 )
                             }
