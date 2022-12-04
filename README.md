@@ -1,34 +1,143 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Kaio Nunx
 
-First, run the development server:
+Sistema de publicar anúncios, semelhante a OLX
+
+
+## Autores
+
+- [@kaiohenrique](https://www.linkedin.com/in/kaio-henrique-costa/)
+
+
+## Funcionalidades
+
+- Cadastro de conta
+- Login pela conta do google
+- Publicar anúncio
+- Editar anúncio
+- Remover anúncio
+- Pesquisa de anúncio
+- Dropzone 
+- Logout
+
+
+## Feedback
+
+Se você tiver algum feedback, por favor nos deixe saber por meio de kaio_costa222@hotmail.com
+
+
+
+
+## 🚀 Sobre mim
+Desenvolvedor de Software com foco no Front-End. Sou um grande entusiasta por tecnologia e busco dia após dia aprender algo novo.
+
+Possuo foco em desenvolvimento JavaScript com ReactJS, onde busco sempre boas práticas para entregar o melhor trabalho possível.
+
+Me considero uma pessoa adaptável em qualquer cenário de mudança, pronto para superar desafios e desempenhar o meu melhor sempre.
+
+Eu me defino em três palavras: otimista, perseverante e disciplinado.
+
+Principais habilidades técnicas:
+- HTML, CSS, JS
+- ReactJS, NextJS
+- Versionamento de código GIT
+
+
+
+
+## Aprendizados
+
+- Organização de código
+- Clean Code
+- Variáveis de ambiente
+- Aprendi a trabalhar com material ui
+- Reutilização de componentes
+- Proteção de rotas
+- Formulários com FORMIK
+- Abstração de código
+- Criação de um sistema de busca
+- Validação de campos
+
+
+## Rodando localmente
+
+Clone o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
+  git clone https://github.com/KaioCosta62/anunx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Entre no diretório do projeto
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+  cd anunx
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Instale as dependências
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+  npm install
+```
 
-## Learn More
+Ou se prefererir utilizar o yarn
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  yarn
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Inicie o servidor
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+  npm run dev
+```
 
-## Deploy on Vercel
+Ou se preferir utilizar o yarn
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+  yarn dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Screenshots
+
+![Screenshot](https://github.com/KaioCosta62/anunx/blob/master/screenshots/Sem%20t%C3%ADtulo.png)
+
+![Screenshot](https://github.com/KaioCosta62/anunx/blob/master/screenshots/Sem%20t%C3%ADtulo1.png)
+
+![Screenshot](https://github.com/KaioCosta62/anunx/blob/master/screenshots/Sem%20t%C3%ADtulo2.png)
+
+![Screenshot](https://github.com/KaioCosta62/anunx/blob/master/screenshots/Sem%20t%C3%ADtulo3.png)
+
+![Screenshot](https://github.com/KaioCosta62/anunx/blob/master/screenshots/Sem%20t%C3%ADtulo4.png)
+
+![Screenshot](https://github.com/KaioCosta62/anunx/blob/master/screenshots/Sem%20t%C3%ADtulo5.png)
+
+
+## Stack utilizada
+
+**Front-end:** NextJS, MaterialUI
+
+**Back-end:** NodeJS
+
+**Banco de  Dados:** MongoDB
+
+## Todas as tecnologias utilizadas:
+
+- NextJS
+- MaterialU
+- Material Icons
+- Material Lab
+- Axios
+- Bcrypt
+- Formidable
+- Formik
+- Mongoose
+- NextAuth
+- NextConnect
+- Slugify
+- Yup
+- React Material Ui Carrousel
+- React Dropzone
+
+
+Feito com 🧡 por Kaio Henrique
