@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core'
 const useStyles = makeStyles(() => ({
     cardMedia:{
       paddingTop: '56%',
+      minHeight: '300px'
     } 
 }))
 
