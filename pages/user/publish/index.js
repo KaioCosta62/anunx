@@ -295,7 +295,7 @@ export async function getServerSideProps({ req }) {
 
   return {
     props: {
-      userId,
+      userId: userId,
       image: user.image
     }
   }
